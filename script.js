@@ -1,4 +1,6 @@
-( () => {
+import checkComplete from "./components/check-complete.js";
+import deleteIcon from "./components/delete-icon.js";
+
     const btn = document.querySelector("[data-form-btn]");
 
     const createTask = (evento) => {
@@ -43,33 +45,7 @@
     //Utilizo el evento con listenners (evento, accion)
     btn.addEventListener("click", createTask);
 
-    //Creando el boton de concluido
-    const checkComplete = () => {
-        const i = document.createElement("i");
-        i.classList.add("far","fa-check-square", "icon")
-        i.addEventListener("click", completeTask);
-        return i
-    }
 
-    //Funcion de completar el task
-    const completeTask = (event) => {
-        const element = event.target
-        element.classList.toggle("fas");
-        element.classList.toggle("completeIcon");
-        element.classList.toggle("far");
-    }
 
-    //Creando el boton de borrar
-    const deleteIcon = () => {
-        const i = document.createElement("i");
-        i.classList.add("fas", "fa-trash-alt", "icon")
-        i.addEventListener("click", deleteTask);
-        return i
-    }
 
-    const deleteTask = (event) => {
-        const card = event.path[1];
-        card.remove()
-    }
 
-}) ()
