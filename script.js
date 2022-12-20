@@ -68,8 +68,8 @@
     }
 
     const deleteTask = (event) => {
-
+        const card = event.path[1];
+        card.remove()
     }
-
 
 }) ()
